@@ -11,6 +11,9 @@ const initialImages = [
   { id: '1', src: Image1, alt: 'Image 1' },
   { id: '2', src: Image2, alt: 'Image 2' },
   { id: '3', src: Image3, alt: 'Image 3' },
+  { id: '4', src: Image3, alt: 'Image 3' },
+  { id: '5', src: Image3, alt: 'Image 3' },
+  { id: '6', src: Image3, alt: 'Image 3' },
 ];
 
 const Gallery = () => {
