@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import { useDrag, useDrop } from "react-dnd";
+import { NativeTypes } from "react-dnd-html5-backend"; 
+import TouchBackend from "react-dnd-touch-backend"; 
+import { DndProvider } from "react-dnd"; 
 import { MrMiyagi } from '@uiball/loaders';
 
 import Image1 from '../asset/football.jpg';
@@ -61,7 +65,13 @@ const Gallery = () => {
       setIsLoading(false);
     }, 2000); 
   }, []);
-
+  const [{ isDragging }, dragRef] = useDrag({
+    type: NativeTypes.FILE, // Use NativeTypes.FILE for files
+    item: { index }, // Include the index in the drag item
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
   const handleDragStart = (index) => {
     setDragItemIndex(index);
   };
@@ -91,6 +101,7 @@ const Gallery = () => {
   };
 
   return (
+    <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
     <div className="image-container">
       <div className="header-container">
         <h1>Image Gallery</h1>
@@ -121,18 +132,31 @@ const Gallery = () => {
             .map((image, index) => (
               <div
                 key={image.id}
+                ref={dragRef}
                 className={
                   dragOverItemIndex === index
                     ? "image-list-item next-position"
                     : "image-list-item"
                 }
+                onDragOver={(e) => {
+                  handleDragOver(e);
+                  e.preventDefault();
+                }}
+                onDrop={(e) => {
+                  handleDrop(index);
+                  e.preventDefault();
+                }}
+                onDragEnter={() => handleDragEnter(index)}
+                onDragLeave={() => handleDragLeave()}
+                onDragEnd={() => handleDragEnd()}
+              
                 draggable
                 onDragStart={() => handleDragStart(index)}
-                onDragOver={handleDragOver}
-                onDrop={() => handleDrop(index)}
-                onDragEnter={() => handleDragEnter(index)}
-                onDragLeave={handleDragLeave}
-                onDragEnd={handleDragEnd}
+                // onDragOver={handleDragOver}
+                // onDrop={() => handleDrop(index)}
+                // onDragEnter={() => handleDragEnter(index)}
+                // onDragLeave={handleDragLeave}
+                // onDragEnd={handleDragEnd}
               >
                 <img
                   src={image.src}
@@ -149,6 +173,7 @@ const Gallery = () => {
         
       )}
     </div>
+    </DndProvider>
   );
 };
 
