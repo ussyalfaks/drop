@@ -88,6 +88,9 @@ const Gallery = () => {
   const handleDragEnd = () => {
     setDragItemIndex(undefined);
     setDragOverItemIndex(undefined);
+    document.removeEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
   };
   const handleTouchStart = (index) => {
     setDragItemIndex(index);
@@ -117,9 +120,9 @@ const Gallery = () => {
     setImages(newImages);
     setDragItemIndex(undefined);
     setDragOverItemIndex(undefined);
-    document.removeEventListener("touchmove", handleTouchMove, {
-      passive: false,
-    });
+    // document.removeEventListener("touchmove", handleTouchMove, {
+    //   passive: false,
+    // });
   };
 
   return (
