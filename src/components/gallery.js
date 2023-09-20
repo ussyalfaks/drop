@@ -91,6 +91,9 @@ const Gallery = () => {
   };
   const handleTouchStart = (index) => {
     setDragItemIndex(index);
+    document.addEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
   };
 
   const handleTouchMove = (event) => {
@@ -114,6 +117,9 @@ const Gallery = () => {
     setImages(newImages);
     setDragItemIndex(undefined);
     setDragOverItemIndex(undefined);
+    document.removeEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
   };
 
   return (
