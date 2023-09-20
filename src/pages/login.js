@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import app from './firebase';
+import app from '../components/firebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import '../App.css'
+import '../style/App.css';
 
 
 

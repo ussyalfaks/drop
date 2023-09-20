@@ -5,6 +5,8 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
+  background-color: whitesmoke;
+
 }
 .App{
   max-width: 960px;
@@ -17,6 +19,20 @@ h1{
   text-align: center;
   margin-bottom: 20px;
 }
+.logout-button button{
+  margin: 20px;
+  padding: 5px 10px ;
+  outline: none;
+  border: 1px solid #34d44f;;
+  border-radius: 30px;
+  align-items: center;
+  display: flex;
+  font-weight: 900;
+  font-family: 'Courier New', Courier, monospace;
+}
+.logout-button svg{
+  padding-right: 10px;
+}
 
 .search-input {
   width: 60%;
@@ -24,6 +40,8 @@ h1{
   border: 1px solid #ccc;
   border-radius: 35px;
   outline: none;
+  border: 1px solid #34d44f;;
+
 }
 .loader{
   display: flex;
@@ -118,12 +136,12 @@ h1{
     top: 50%;
     left: 50%;
     width: 400px;
-    padding: 40px;
+    padding: 70px 30px;
     transform: translate(-50%, -50%);
-    background:transparent;
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(24, 24, 24, 0.9);
+    box-shadow: 0 15px 25px rgba(167, 156, 156, 0.9);
     border-radius: 10px;
+    background-color: white;
     border-style: inset;
   }
   
