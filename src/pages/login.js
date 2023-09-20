@@ -40,7 +40,6 @@ const signIn = () =>{
         <div className="user-box">
         <input
           type="text"
-          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -49,7 +48,6 @@ const signIn = () =>{
           <div className="user-box">
         <input
           type="password"
-          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
