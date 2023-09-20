@@ -64,6 +64,10 @@ const Gallery = () => {
 
   const handleDragStart = (index) => {
     setDragItemIndex(index);
+     // Disable scrolling
+    window.addEventListener("touchmove", preventScrolling, {
+      passive: false,
+    });
   };
 
   const handleDragOver = (event) => {
@@ -88,15 +92,14 @@ const Gallery = () => {
   const handleDragEnd = () => {
     setDragItemIndex(undefined);
     setDragOverItemIndex(undefined);
-    document.removeEventListener("touchmove", handleTouchMove, {
-      passive: false,
-    });
+      // Re-enable scrolling
+      window.removeEventListener("touchmove", preventScrolling, {
+        passive: true,
+      });
   };
   const handleTouchStart = (index) => {
     setDragItemIndex(index);
-    document.addEventListener("touchmove", handleTouchMove, {
-      passive: false,
-    });
+   
   };
 
   const handleTouchMove = (event) => {
@@ -120,11 +123,11 @@ const Gallery = () => {
     setImages(newImages);
     setDragItemIndex(undefined);
     setDragOverItemIndex(undefined);
-    // document.removeEventListener("touchmove", handleTouchMove, {
-    //   passive: false,
-    // });
+    
   };
-
+  const preventScrolling = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="image-container">
       <div className="header-container">
