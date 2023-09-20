@@ -2,6 +2,11 @@ import { useState } from 'react';
 import app from './firebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import '../App.css'
+
+
+
+
 
 
 const Login = () => {
@@ -29,30 +34,30 @@ const signIn = () =>{
 }
 
   return (
-    <div className="login-container">
-      <h2 className="login-header">Login</h2>
-      <div className="input-container">
+    <>
+    <div className="login-box">
+        <h2>Login</h2>
+        <div className="user-box">
         <input
           type="text"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
-      <div className="input-container">
+         <label>Username</label>
+          </div>
+          <div className="user-box">
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+      <label>Password</label>
+          </div>
+          <button onClick={signIn}>Submit</button>
       </div>
-      <div className="input-container">
-        <button className="login-button" onClick={signIn}>
-          Login
-        </button>
-      </div>
-    </div>
+      </>
   );
 };
 
