@@ -214,7 +214,11 @@ h1{
     display: block;
   }
 
-
+@media (Max-width:499px){
+  .login-box{
+    width: 300px;
+  }
+}
 @media (min-width:700px){
   .image-list{
     display: grid;
