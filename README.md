@@ -37,8 +37,10 @@ This command will start a development server, and the React application will be 
 Step 8: Log In
 Visit http://localhost:3000 in your web browser. You should see the React application running. To log in, use the provided credentials:
 
-Username: user@example.com
-Password: 1Password
+1- Username: user@example.com
+
+2- Password: 1Password
+
 You should now be able to access the application with these login credentials.
 
 Congratulations! You have successfully installed and started the React project using the downloaded source code. You can now explore and interact with the application. If the project includes any additional setup or configuration instructions, be sure to follow those as well.
