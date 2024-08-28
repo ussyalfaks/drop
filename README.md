@@ -1,4 +1,4 @@
-Step 1: Prerequisites
+### Step 1: Prerequisites
 Before you start, make sure you have the following installed on your system:
 
 Node.js: Download and install Node.js from nodejs.org. Node.js includes npm (Node Package Manager), which is used to manage project dependencies.
