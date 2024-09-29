@@ -16,7 +16,7 @@ You will need to use the terminal or command prompt to navigate to the project d
 Use the cd command to navigate to the project directory:
 
 
-cd path/to/project
+cd path/to/project.
 Replace path/to/project with the actual path to the project folder.
 
 Step 6: Install Project Dependencies
