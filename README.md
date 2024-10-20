@@ -7,7 +7,7 @@ Node.js: Download and install Node.js from nodejs.org. Node.js includes npm (Nod
 Download the source code for the React project. This code is typically provided as a ZIP archive or a Git repository. Save it to a location on your computer where you want to work on the project.
 
 ## Step 3: Extract the Source Code (if necessary)
-If you downloaded a ZIP archive, extract its contents to a folder of your choice.
+If you downloaded a ZIP archive, extract its contents to a folder of your choice..
 
 ## Step 4: Open a Terminal or Command Prompt
 You will need to use the terminal or command prompt to navigate to the project directory and run commands.
